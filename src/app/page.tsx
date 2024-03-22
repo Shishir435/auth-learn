@@ -1,17 +1,15 @@
-import prisma from "@/lib/db";
-import { Suspense } from "react";
+import prisma from "@/lib/db"
+import { Suspense } from "react"
 
 export default async function Home() {
-  const user= await prisma.user.create({
+  const user = await prisma.user.create({
     data: {
-      name: "hdksfvhfvghjg"
-    }
+      name: "hdksfvhfvghjg",
+    },
   })
   return (
     <div>
-      <Suspense fallback={<div>leading</div>}>
-        {JSON.stringify(user)}
-      </Suspense>
+      <Suspense fallback={<div>leading</div>}>{JSON.stringify(user)}</Suspense>
     </div>
   )
 }
