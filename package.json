@@ -7,8 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "postinstall": "prisma generate && huskey install",
     "format": "prettier --check .",
     "format:fix": "prettier --write --list-different ."
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,md}": "pnpm format:fix"
   },
   "dependencies": {
     "@prisma/client": "5.11.0",
@@ -30,6 +34,8 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prisma": "^5.11.0",
